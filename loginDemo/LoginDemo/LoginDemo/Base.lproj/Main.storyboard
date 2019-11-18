@@ -87,6 +87,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUy-S5-qxN">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="3HV-RN-aYE" eventType="touchUpInside" id="qHg-p1-d77"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-H8-VKQ">
                                         <rect key="frame" x="0.0" y="180" width="334" height="20.5"/>
@@ -109,6 +112,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="42f-iA-3Nu"/>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="fuz-H8-VKQ" id="0mr-mS-8kq"/>
+                        <outlet property="firstNameTextField" destination="yZb-Fr-85m" id="TcL-kk-pSZ"/>
+                        <outlet property="lastNameTextField" destination="9kW-Lv-NnA" id="yA2-Pq-zyh"/>
+                        <outlet property="loginButton" destination="BUy-S5-qxN" id="r16-Uo-trB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVk-An-CQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,8 +131,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-fI-Lbi">
-                                <rect key="frame" x="40" y="100" width="334" height="340"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-fI-Lbi">
+                                <rect key="frame" x="40" y="144" width="334" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQ5-nl-9pQ">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -155,6 +164,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0U-Rx-Ay6">
                                         <rect key="frame" x="0.0" y="240" width="334" height="40"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="tPR-yO-EnB" eventType="touchUpInside" id="k4s-ri-pKT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-yl-ede">
                                         <rect key="frame" x="0.0" y="300" width="334" height="40"/>
@@ -176,13 +188,22 @@
                         <constraints>
                             <constraint firstItem="GNt-fI-Lbi" firstAttribute="leading" secondItem="8U9-sw-YVk" secondAttribute="leading" constant="40" id="O8R-Bc-oid"/>
                             <constraint firstItem="8U9-sw-YVk" firstAttribute="trailing" secondItem="GNt-fI-Lbi" secondAttribute="trailing" constant="40" id="dV9-Fj-2e9"/>
+                            <constraint firstItem="GNt-fI-Lbi" firstAttribute="top" secondItem="8U9-sw-YVk" secondAttribute="top" constant="100" id="uC6-1R-RZZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8U9-sw-YVk"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="uU6-JF-hIl" id="maZ-se-PNP"/>
+                        <outlet property="errorLabel" destination="ksi-yl-ede" id="MHs-GY-uBH"/>
+                        <outlet property="firstNameTextField" destination="iQ5-nl-9pQ" id="r9w-pl-uIg"/>
+                        <outlet property="lastNameTextField" destination="o5g-rB-OCV" id="2QS-aa-BRI"/>
+                        <outlet property="passworftextField" destination="FPN-vr-Phc" id="AAd-hm-I6S"/>
+                        <outlet property="signUpButton" destination="M0U-Rx-Ay6" id="ol0-ar-IvE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czH-DU-NSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-848"/>
+            <point key="canvasLocation" x="1789.8550724637682" y="-848.4375"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XLN-hx-cnc">

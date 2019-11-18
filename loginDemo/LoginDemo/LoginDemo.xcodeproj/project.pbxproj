@@ -15,6 +15,8 @@
 		6356132223802E0000F73F3D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356132123802E0000F73F3D /* SignUpViewController.swift */; };
 		6356132423802E6D00F73F3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356132323802E6D00F73F3D /* LoginViewController.swift */; };
 		6356132623802E7900F73F3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356132523802E7900F73F3D /* HomeViewController.swift */; };
+		63C994412382C60800B0E640 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9943F2382C60800B0E640 /* Utilities.swift */; };
+		63C994422382C60800B0E640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C994402382C60800B0E640 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6356132123802E0000F73F3D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6356132323802E6D00F73F3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6356132523802E7900F73F3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		63C9943F2382C60800B0E640 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		63C994402382C60800B0E640 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		6356130E23802D7E00F73F3D /* LoginDemo */ = {
 			isa = PBXGroup;
 			children = (
+				63C994432382C67D00B0E640 /* helper */,
 				6356132723802E8A00F73F3D /* ViewController */,
 				6356130F23802D7E00F73F3D /* AppDelegate.swift */,
 				6356131123802D7E00F73F3D /* ViewController.swift */,
@@ -80,6 +85,15 @@
 				6356132523802E7900F73F3D /* HomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63C994432382C67D00B0E640 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				63C994402382C60800B0E640 /* Constants.swift */,
+				63C9943F2382C60800B0E640 /* Utilities.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C994412382C60800B0E640 /* Utilities.swift in Sources */,
 				6356132623802E7900F73F3D /* HomeViewController.swift in Sources */,
 				6356132423802E6D00F73F3D /* LoginViewController.swift in Sources */,
 				6356132223802E0000F73F3D /* SignUpViewController.swift in Sources */,
+				63C994422382C60800B0E640 /* Constants.swift in Sources */,
 				6356131223802D7E00F73F3D /* ViewController.swift in Sources */,
 				6356131023802D7E00F73F3D /* AppDelegate.swift in Sources */,
 			);
