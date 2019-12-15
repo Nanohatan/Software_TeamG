@@ -119,6 +119,17 @@ class SignUpViewController: UIViewController {
                     db.collection("tasks").document(result!.user.uid).updateData([
                         "uid": FieldValue.delete(),])
                     
+                    db.collection("DailyTasks").document(result!.user.uid).setData(
+                    ["uid": result!.user.uid ]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message
+                            self.showError("Error saving user data")
+                        }
+                    }
+                    db.collection("DailyTasks").document(result!.user.uid).updateData([
+                        "uid": FieldValue.delete(),])
+                    
                     // Transition to the home screen
                     self.transitionToHome()
                 }

@@ -12,7 +12,8 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    
+    var isTodoTask:Bool = true
+    @IBOutlet weak var taskTypeLabel: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     let user = Auth.auth().currentUser
@@ -26,31 +27,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         getUserName()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1)
     }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tableview1,count")
         return self.tasksList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("tableview2")
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         // セルに表示する値を設定する
         print("this is list")
         print(tasksList)
+        //画像でデイリータスクにチェックボックスを実装
+        if !isTodoTask{
+            let image: UIImage = UIImage(named: "checkbox_unchecked.png")!
+            cell.imageView!.image = image
+        }else{
+            cell.imageView?.image = nil
+        }
+        
         cell.textLabel!.text = self.tasksList[indexPath.row]
+        cell.backgroundColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:0.2)
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         //削除スワイプ
-        let deletButtom = UITableViewRowAction(style: .normal, title: "delet"){(rowAction, indexPath) in self.deleteDb(forRowAt: indexPath)
+        let deletButtom = UITableViewRowAction(style: .normal, title: "delet"){(rowAction, indexPath) in
+            self.deleteDb(forRowAt: indexPath)
+            print("delet called")
             self.tasksList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -88,7 +101,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             taskRef.getDocument {(document, error) in
                 if let document = document, document.exists {
-                    let tasks = document.data()?.keys
+                    let tasks = document.data()?.keys.sorted()
                     for i in tasks!{
                         self.tasksList.append(i)
                     }
@@ -100,16 +113,60 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    
+    func getDailyTasks(){
+        if let user = user {
+            let uid = user.uid
+            let taskRef = db.collection("DailyTasks").document(uid)
+            
+            taskRef.getDocument {(document, error) in
+                if let document = document, document.exists {
+                    let tasks = document.data()?.keys.sorted()
+                    for i in tasks!{
+                        self.tasksList.append(i)
+                    }
+                    print("made tastList")
+                    self.tableView.reloadData()
+                } else {
+                    print("Task does not exist")
+                }
+            }
+        }
+    }
     func deleteDb(forRowAt indexPath: IndexPath){
         if let user = user {
-            let uid = user.uid; db.collection("tasks").document(uid).updateData([self.tasksList[indexPath.row]:FieldValue.delete()])
+            let uid = user.uid;
+            if isTodoTask{            db.collection("tasks").document(uid).updateData([self.tasksList[indexPath.row]:FieldValue.delete()])
+            }else {            db.collection("DailyTasks").document(uid).updateData([self.tasksList[indexPath.row]:FieldValue.delete()])
+            }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        taskTypeLabel.text = "todo tasks"
         super.viewWillAppear(animated)
         getUserTask()
     }
     
+    @IBAction func todoTaskTapped(_ sender: Any) {
+        isTodoTask = true
+        taskTypeLabel.text = "todo tasks"
+        tasksList.removeAll()
+        getUserTask()
+    }
+    
+    @IBAction func dailyTaskTapped(_ sender: Any) {
+        isTodoTask = false
+        taskTypeLabel.text = "daily tasks"
+        tasksList.removeAll()
+        self.tableView.reloadData()
+        getDailyTasks()
+    }
+    
+    @IBAction func addTapped(_ sender: Any) {
+        if (isTodoTask){
+            performSegue(withIdentifier: "todoTask", sender: nil)
+        }else{
+            performSegue(withIdentifier: "dailyTask", sender: nil)
+        }
+    }
 }
