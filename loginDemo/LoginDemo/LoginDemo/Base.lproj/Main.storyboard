@@ -290,7 +290,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-eA-0k9">
                                         <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
                                         <state key="normal" title="Todo">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.0067566487083593665" green="0.77349821891191706" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="todoTaskTapped:" destination="CGR-jh-PMj" eventType="touchUpInside" id="nus-ul-aHy"/>
@@ -299,7 +299,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EP4-zV-eO8">
                                         <rect key="frame" x="203" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="日課">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.0" green="0.25379743008523836" blue="0.95037240932642486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyTaskTapped:" destination="CGR-jh-PMj" eventType="touchUpInside" id="8Ql-6E-Mhi"/>

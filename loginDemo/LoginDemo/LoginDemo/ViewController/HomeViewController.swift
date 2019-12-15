@@ -27,7 +27,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         getUserName()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1)
+        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1.0)
+        
     }
 
     
@@ -48,12 +49,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if !isTodoTask{
             let image: UIImage = UIImage(named: "checkbox_unchecked.png")!
             cell.imageView!.image = image
+            cell.backgroundColor = UIColor(red:0.46, green:0.59, blue:1.00, alpha:0.2)
         }else{
             cell.imageView?.image = nil
+            cell.backgroundColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:0.2)
         }
         
         cell.textLabel!.text = self.tasksList[indexPath.row]
-        cell.backgroundColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:0.2)
+        
 
         return cell
     }
@@ -151,6 +154,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         isTodoTask = true
         taskTypeLabel.text = "todo tasks"
         tasksList.removeAll()
+        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1.0)
         getUserTask()
     }
     
@@ -159,6 +163,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         taskTypeLabel.text = "daily tasks"
         tasksList.removeAll()
         self.tableView.reloadData()
+        tableView.separatorColor = UIColor(red:0.46, green:0.59, blue:1.00, alpha:1.0)
         getDailyTasks()
     }
     
