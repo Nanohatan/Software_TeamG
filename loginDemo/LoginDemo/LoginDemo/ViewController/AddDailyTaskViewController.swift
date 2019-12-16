@@ -36,14 +36,18 @@ class AddDilyTaskViewController: UIViewController{
         let currentDateTime = Date()
         let userCalendar = Calendar.current
         let requestedComponents: Set<Calendar.Component> = [
+            .year,
             .month,
             .day,
             .hour,
         ]
         let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: currentDateTime)
-        print(dateTimeComponents.day!)
+        //print(dateTimeComponents.day!)
+        //print(dateTimeComponents.year!)
+        let year = String(dateTimeComponents.year!)
         let today = String(dateTimeComponents.day!)
-        return today
+        let month = String(dateTimeComponents.month!)
+        return year+month+today
     }
 }
 
