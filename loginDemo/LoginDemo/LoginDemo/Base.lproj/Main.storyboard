@@ -498,7 +498,6 @@
         <image name="icon.png" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WVQ-HV-73I"/>
         <segue reference="1Ap-Sh-TSQ"/>
         <segue reference="dXd-R5-Qa9"/>
     </inferredMetricsTieBreakers>
