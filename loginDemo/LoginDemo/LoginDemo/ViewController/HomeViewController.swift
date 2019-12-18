@@ -27,7 +27,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         getUserName()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1.0)
         
     }
 
@@ -120,6 +119,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = user {
             let uid = user.uid
             let taskRef = db.collection("DailyTasks").document(uid)
+
             
             taskRef.getDocument {(document, error) in
                 if let document = document, document.exists {
@@ -144,27 +144,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //タスクの種類別の設定
+    func setTasks(flag: Bool) {
+        if flag{
+            taskTypeLabel.text = "todo tasks"
+            tasksList.removeAll()
+            tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1.0)
+            getUserTask()
+        }else {
+            taskTypeLabel.text = "daily tasks"
+            tasksList.removeAll()
+            self.tableView.reloadData()
+            tableView.separatorColor = UIColor(red:0.46, green:0.59, blue:1.00, alpha:1.0)
+            getDailyTasks()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         taskTypeLabel.text = "todo tasks"
         super.viewWillAppear(animated)
-        getUserTask()
+        setTasks(flag: isTodoTask)
     }
     
     @IBAction func todoTaskTapped(_ sender: Any) {
         isTodoTask = true
-        taskTypeLabel.text = "todo tasks"
-        tasksList.removeAll()
-        tableView.separatorColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:1.0)
-        getUserTask()
-    }
+        setTasks(flag: isTodoTask)    }
     
     @IBAction func dailyTaskTapped(_ sender: Any) {
         isTodoTask = false
-        taskTypeLabel.text = "daily tasks"
-        tasksList.removeAll()
-        self.tableView.reloadData()
-        tableView.separatorColor = UIColor(red:0.46, green:0.59, blue:1.00, alpha:1.0)
-        getDailyTasks()
+        setTasks(flag: isTodoTask)
     }
     
     @IBAction func addTapped(_ sender: Any) {
