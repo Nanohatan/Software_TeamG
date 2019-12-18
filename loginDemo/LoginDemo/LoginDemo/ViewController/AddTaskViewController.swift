@@ -49,10 +49,8 @@ class AddTaskViewController: UIViewController{
         let user = Auth.auth().currentUser
         let db = Firestore.firestore()
         db.collection("tasks").document(user!.uid).updateData(
-        [taskname://[
+        [taskname:
             ["memo":memo],
-            //["lastupdate":FieldValue.serverTimestamp()]
-            //]
         ]) { (error) in
             if error != nil {
                 // Show error message
