@@ -11,6 +11,7 @@
 		633C449023A4C5A0001C7EE9 /* checkbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 633C448F23A4C59F001C7EE9 /* checkbox_unchecked.png */; };
 		633C449423A4CBA5001C7EE9 /* baby_tsutai_aruki.png in Resources */ = {isa = PBXBuildFile; fileRef = 633C449323A4CBA5001C7EE9 /* baby_tsutai_aruki.png */; };
 		633C449A23A4D974001C7EE9 /* AddDailyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C449923A4D974001C7EE9 /* AddDailyTaskViewController.swift */; };
+		6340F2DE23AA7216004B0081 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340F2DD23AA7216004B0081 /* Task.swift */; };
 		6356131023802D7E00F73F3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356130F23802D7E00F73F3D /* AppDelegate.swift */; };
 		6356131223802D7E00F73F3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356131123802D7E00F73F3D /* ViewController.swift */; };
 		6356131523802D7E00F73F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6356131323802D7E00F73F3D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		633C448F23A4C59F001C7EE9 /* checkbox_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_unchecked.png; sourceTree = "<group>"; };
 		633C449323A4CBA5001C7EE9 /* baby_tsutai_aruki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baby_tsutai_aruki.png; sourceTree = "<group>"; };
 		633C449923A4D974001C7EE9 /* AddDailyTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyTaskViewController.swift; sourceTree = "<group>"; };
+		6340F2DD23AA7216004B0081 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		6356130C23802D7E00F73F3D /* LoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6356130F23802D7E00F73F3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6356131123802D7E00F73F3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				63C994432382C67D00B0E640 /* helper */,
 				6356132723802E8A00F73F3D /* ViewController */,
 				6356130F23802D7E00F73F3D /* AppDelegate.swift */,
+				6340F2DD23AA7216004B0081 /* Task.swift */,
 				6356131123802D7E00F73F3D /* ViewController.swift */,
 				6356131323802D7E00F73F3D /* Main.storyboard */,
 				6356131623802D8000F73F3D /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			files = (
 				63C994412382C60800B0E640 /* Utilities.swift in Sources */,
 				63CB2BA42396908D00AC11FF /* AddTaskViewController.swift in Sources */,
+				6340F2DE23AA7216004B0081 /* Task.swift in Sources */,
 				633C449A23A4D974001C7EE9 /* AddDailyTaskViewController.swift in Sources */,
 				6356132623802E7900F73F3D /* HomeViewController.swift in Sources */,
 				6356132423802E6D00F73F3D /* LoginViewController.swift in Sources */,
