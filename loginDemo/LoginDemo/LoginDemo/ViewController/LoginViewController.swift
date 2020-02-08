@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: Any) {
+    
         // TODO: Validate Text Fields
         
         // Create cleaned versions of the text field

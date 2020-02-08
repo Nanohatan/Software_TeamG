@@ -19,10 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-UV-QHC">
-                                <rect key="frame" x="40" y="618" width="295" height="120"/>
+                                <rect key="frame" x="40" y="-2" width="295" height="740"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="em0-EI-vIM">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="600"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1I-gO-pUs">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <rect key="frame" x="0.0" y="620" width="295" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zAP-x2-fIl"/>
                                         </constraints>
@@ -32,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCI-bK-ypS">
-                                        <rect key="frame" x="0.0" y="70" width="295" height="50"/>
+                                        <rect key="frame" x="0.0" y="690" width="295" height="50"/>
                                         <state key="normal" title="Sign up"/>
                                         <connections>
                                             <segue destination="tPR-yO-EnB" kind="show" id="vWd-iR-XLm"/>
@@ -43,10 +46,6 @@
                                     <constraint firstItem="VCI-bK-ypS" firstAttribute="height" secondItem="W1I-gO-pUs" secondAttribute="height" id="aKF-ce-4qt"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="em0-EI-vIM">
-                                <rect key="frame" x="20" y="120" width="374" height="369"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021.7391304347827" y="-559.15178571428567"/>
+            <point key="canvasLocation" x="1021.6" y="-559.35960591133005"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="iOR-Bq-ZRB">
@@ -498,7 +497,7 @@
         <image name="icon.png" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ap-Sh-TSQ"/>
-        <segue reference="dXd-R5-Qa9"/>
+        <segue reference="fHV-I3-Xl7"/>
+        <segue reference="Ve6-eT-2Aq"/>
     </inferredMetricsTieBreakers>
 </document>
