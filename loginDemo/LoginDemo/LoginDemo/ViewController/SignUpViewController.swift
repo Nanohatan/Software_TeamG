@@ -153,4 +153,12 @@ class SignUpViewController: UIViewController {
         
     }
     
+    //キーボードしまう
+    override func touchesBegan(_ touches :Set<UITouch>,with event:UIEvent?){
+        lastNameTextField.resignFirstResponder()
+        firstNameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passworftextField.resignFirstResponder()
+    }
 }
+

@@ -160,8 +160,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        taskTypeLabel.text = "todo tasks"
-        super.viewWillAppear(animated)
+        //taskTypeLabel.text = "todo tasks"
+        //super.viewWillAppear(animated)
         setTasks(flag: isTodoTask)
     }
     

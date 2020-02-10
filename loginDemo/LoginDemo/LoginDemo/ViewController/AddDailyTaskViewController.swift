@@ -21,8 +21,10 @@ class AddDilyTaskViewController: UIViewController{
     @IBAction func addTapped(_ sender: Any) {
         let taskname = taskNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let user = Auth.auth().currentUser
-        let id = NSUUID().uuidString
+        //let id = NSUUID().uuidString
         let db = Firestore.firestore()
+        db.collection("DailyTasks").document(user!.uid).updateData([taskname:["memo":""]])
+        /*
         db.collection("DailyTasks").document(user!.uid).updateData(
             [id:
                 ["taskname":taskname,
@@ -31,7 +33,8 @@ class AddDilyTaskViewController: UIViewController{
             if error != nil {
                 print("Error saving task data")
             }
-        }
+        }*/
+        
     }
     
     func getDate() -> String {
