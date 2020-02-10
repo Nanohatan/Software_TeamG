@@ -127,6 +127,7 @@
                         <viewLayoutGuide key="safeArea" id="42f-iA-3Nu"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="fWc-rh-NBg" id="fR2-UQ-ypo"/>
                         <outlet property="emailTextField" destination="yZb-Fr-85m" id="mP9-Bk-jGt"/>
                         <outlet property="errorLabel" destination="fuz-H8-VKQ" id="0mr-mS-8kq"/>
                         <outlet property="loginButton" destination="BUy-S5-qxN" id="Qik-8x-rgo"/>
@@ -214,6 +215,7 @@
                         <viewLayoutGuide key="safeArea" id="8U9-sw-YVk"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="5VN-nd-d69" id="Ocb-y9-hBP"/>
                         <outlet property="emailTextField" destination="uU6-JF-hIl" id="maZ-se-PNP"/>
                         <outlet property="errorLabel" destination="ksi-yl-ede" id="MHs-GY-uBH"/>
                         <outlet property="firstNameTextField" destination="iQ5-nl-9pQ" id="r9w-pl-uIg"/>
@@ -350,7 +352,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XT7-7j-KLT">
                                 <rect key="frame" x="20" y="74" width="335" height="331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whl-tf-9Kd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whl-tf-9Kd">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -497,9 +499,8 @@
         <image name="icon.png" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WVQ-HV-73I"/>
-        <segue reference="vWd-iR-XLm"/>
-        <segue reference="1Ap-Sh-TSQ"/>
+        <segue reference="M9C-Tu-RxM"/>
+        <segue reference="fHV-I3-Xl7"/>
         <segue reference="Ve6-eT-2Aq"/>
     </inferredMetricsTieBreakers>
 </document>

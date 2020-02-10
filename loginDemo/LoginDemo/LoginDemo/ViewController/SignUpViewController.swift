@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
+    
     func showError(_ message:String) {
         
         errorLabel.text = message
@@ -45,6 +47,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passworftextField)
         Utilities.styleFilledButton(signUpButton)
+        Utilities.styleBackButton(backButton)
     }
     //chaech the field and validate that the data is correct
     func validateFields() -> String? {
