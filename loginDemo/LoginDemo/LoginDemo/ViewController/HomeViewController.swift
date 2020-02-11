@@ -44,15 +44,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("this is list")
         print(tasksList)
         //画像でデイリータスクにチェックボックスを実装
+        
         if !isTodoTask{
-            let image: UIImage = UIImage(named: "checkbox_unchecked.png")!
-            cell.imageView!.image = image
+            //let image: UIImage = UIImage(named: "checkbox_unchecked.png")!
+            //cell.imageView!.image = image
             cell.backgroundColor = UIColor(red:0.46, green:0.59, blue:1.00, alpha:0.2)
         }else{
-            cell.imageView?.image = nil
+            //cell.imageView?.image = nil
             cell.backgroundColor = UIColor(red:0.63, green:0.91, blue:0.63, alpha:0.2)
         }
-        
+ 
         cell.textLabel!.text = self.tasksList[indexPath.row]
         
 
