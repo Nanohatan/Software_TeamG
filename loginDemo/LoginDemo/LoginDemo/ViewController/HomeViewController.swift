@@ -20,6 +20,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tasksList = [String]()
     var db: Firestore!
     
+    var memo = String()
+    var memomemo : [String] = [""]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
@@ -54,6 +58,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         cell.textLabel!.text = self.tasksList[indexPath.row]
+        memomemo = tasksList
         
 
         return cell
@@ -181,4 +186,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             performSegue(withIdentifier: "dailyTask", sender: nil)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        memo = memomemo[indexPath.row]
+        print(memo)
+        UserDefaults.standard.set(memo, forKey: "key")
+    }
+
+    
+    
 }
